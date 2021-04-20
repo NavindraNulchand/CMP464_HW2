@@ -8,18 +8,25 @@ class Form extends Component {
             TODO - set initial state for link name and URL 
         */
        this.state = {
-           linkName: '',
-           linkURL: ''
+           name: '',
+           URL: ''
        }
-       this.handleChange = this.handleChange.bind(this);
-       this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
-    handleChange = event => {
+    handleChangeForName = event => {
         /*
             TODO - Logic for changing state based on form changes
         */
-       this.setState({value: event.target.value});
+       this.setState({name: event.target.value});
+
+    }
+
+    handleChangeForURL = event => {
+        /*
+            TODO - Logic for changing state based on form changes
+        */
+       this.setState({URL: event.target.value});
+
     }
 
     onFormSubmit = (event) => {
@@ -42,12 +49,15 @@ class Form extends Component {
                 {/* TODO - Logic for returning a form element with labels and inputs for link name and URL */}
                 <label>
                     Link Name:
-                    <input type = "text" value={this.state.linkName} onChange={this.handleChange} />
+                    <input type = "text" value={this.state.linkName} onChange={this.handleChangeForName} />
                 </label>
                 <label>
                     URL:
-                    <input type = "text" value ={this.state.linkURL} onChange={this.handleChange} /> 
+                    <input type = "text" value ={this.state.linkURL} onChange={this.handleChangeForURL} /> 
                 </label>
+                <input type = "submit">
+
+                </input>
             </form>
         )
     
